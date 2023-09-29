@@ -58,7 +58,7 @@ void main() {
 	vec3 L = mPos - lightPoint;
 	float Kp = dot(L, tNorm) / (length(L)/length(tNorm));
 	
-	float point = clamp(a*Kp, 0, 0.3);
+	float point = clamp(a*Kp, 0.0, 0.3);
 	
 	outColor = vec4((ambient*color + point*color + Kd*color).xyz, color.w);
 }
