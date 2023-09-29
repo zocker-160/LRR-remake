@@ -198,6 +198,8 @@ public class EntityEngine {
 	}
 	
 	public void bindScript(Entity e, File f) throws FileNotFoundException {
+		System.out.println("Binding script: "+f.getPath());
+
 		LuaValue script = globals.load(new FileReader(f), f.getName());
 		e.script = script;
 	}

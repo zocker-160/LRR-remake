@@ -90,7 +90,7 @@ public class RockRaidersRemake {
 	}
 	
 	private void init() {
-		
+
 		dProcessor = new DelayedProcessor();
 		
 		try {
@@ -256,7 +256,7 @@ public class RockRaidersRemake {
 			p.tiles.add(new Vector2i(5, 5));
 			im.curPath = p;
 			im.curPathStep = 0;
-			eng.bindScript(im, new File("TinyIMScript.lua"));
+			eng.bindScript(im, new File("scripts/TinyIMScript.lua"));
 		} catch (Exception e2) {
 			e2.printStackTrace();
 		}
