@@ -232,12 +232,13 @@ public class AssetManager {
 	}
 	
 	public InputStream getAsset(String path) {
-		path = toAssetPath(path);
-		Asset a = assets.get(path);
-		if(a == null)
-			return null;
+		System.out.println("Loading asset: "+path);
+		
+		var asset = assets.get(toAssetPath(path));
+		if (asset == null)
+			return null; // WHAT THE FUCK????????????????? HOW ABOUT PROPER ERROR HANDLING???????
 		else
-			return a.asStream();
+			return asset.asStream();
 	}
 	
 	public LwsAnimation getAnimation(String path) {

@@ -300,9 +300,9 @@ public class LwsFileData {
 //			m.origin(new Vector3f(0));
 			
 			m.scaleAround(scales[i].x, scales[i].y, scales[i].z, objectPivot[i].x, objectPivot[i].y, objectPivot[i].z);
-			m._m30(objectRelPos[i].x);
-			m._m31(objectRelPos[i].y);
-			m._m32(objectRelPos[i].z);
+			m.m30(objectRelPos[i].x);
+			m.m31(objectRelPos[i].y);
+			m.m32(objectRelPos[i].z);
 			
 //			m.translate(objectRelPos[i]);
 			

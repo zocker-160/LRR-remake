@@ -97,7 +97,8 @@ public class Input {
 
 		@Override
 		public void invoke(long window, double _x, double _y) {
-			
+			//System.out.printf("x: %f, y: %f %n", _x, _y);
+
 			float x = (float) _x;
 			float y = (float) _y;
 			
@@ -111,13 +112,21 @@ public class Input {
 				return;
 			}
 			
-			mouse.x = clamp(mouse.x + dx, 0, par.getWidth());
-			mouse.y = clamp(mouse.y + dy, 0, par.getHeight());
+			mouse.y = clamp(mouse.y + dy, 0f, par.getHeight());
+			mouse.x = clamp(mouse.x + dx, 0f, par.getWidth());
 			mouse.z = dx;
 			mouse.w = dy;
 			
 		}
-		
+
+		private float clamp(float val, float min, float max) {
+			if(val < min)
+				return min;
+			if(val > max)
+				return max;
+			return val;
+		}
+
 	}
 	
 	private class MouseClick implements GLFWMouseButtonCallbackI {
@@ -149,14 +158,6 @@ public class Input {
 			}
 		}
 		
-	}
-	
-	private static float clamp(float val, float min, float max) {
-		if(val < min)
-			return min;
-		if(val > max)
-			return max;
-		return val;
 	}
 	
 }

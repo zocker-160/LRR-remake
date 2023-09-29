@@ -176,10 +176,10 @@ public class Renderer {
 	
 	public void render(Entity e, Shader s) {
 		
-		Matrix4f temp = new Matrix4f(e.rot);
-		temp._m30(temp.m30()+e.pos.x);
-		temp._m31(temp.m31()+e.pos.y);
-		temp._m32(temp.m32()+e.pos.z);
+		var temp = new Matrix4f(e.rot);
+		temp.m30(temp.m30()+e.pos.x);
+		temp.m31(temp.m31()+e.pos.y);
+		temp.m32(temp.m32()+e.pos.z);
 		s.setUniMatrix4f("modelTrans", temp);
 		render(e.anims[e.currentAnimation], s);
 		
