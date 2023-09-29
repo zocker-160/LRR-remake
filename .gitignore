@@ -1,3 +1,13 @@
-/bin/
-/Data/
-/.settings/
+.directory
+
+pom_templates/
+bin/
+Data/
+target/
+lib_old/
+.settings/
+.idea/  
+__*
+
+*.wad
+MavenTemplate.yml
